@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Título da página</title>
+  <meta charset="utf-8">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <ul>
+    <li *ngFor="let usuario of Usuarios">
+      <h2>{{usuario.title}}</h2>
+    </li>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+  </ul>
+  <div class="container">
+    <h2>Usuarios</h2>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Bancario</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    </nav>
+
+    <div class="form-group">
+      <!--  <label for="cod_ti" class="col-sm-2 control-label"><font color="red">*</font>Nome</label>-->
+      <label for="cod_ti" class="col-sm-2 control-label"><strong class="text-danger">*</strong> Nome Completo
+      </label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="nome" name="nome" maxlength="120" placeholder="Informe o nome">
+
+      </div>
+      <label for="fronteira" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="email" maxlength="70" placeholder="Informe email" value>
+      </div>
+
+
+      <!--cep-->
+      <div class="form-group" id="info-bairro-cep">
+        <label class="col-sm-2 control-label"><strong class="text-danger">*</strong> CEP</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control maskCep" name="cep" maxlength="8" placeholder="Informe o cep">
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <hr>
+    <br> <b>
+      <p class="text-info">Informação Bancario</p>
+    </b>
+    <div class="form-group">
+      <div class="form-group">
+        <!--  <label for="cod_ti" class="col-sm-2 control-label"><font color="red">*</font>Nome</label>-->
+        <label for="cod_ti" class="col-sm-2 control-label"><strong class="text-danger">*</strong> Banco
+          <select>
+            <option value="volvo">Santander</option>
+            <option value="saab">Caixa</option>
+            <option value="opel">Banco do Brail</option>
+            <option value="audi">BRB</option>
+          </select>
+        </label>
+
+      </div>
+      <label for="cod_ti" class="col-sm-2 control-label">Agêcia</label>
+      <div class="col-sm-4">
+        <input type="number" class="form-control maskCpf" name="Agêcia" maxlength="10" placeholder="Informe a Agêcia">
+      </div>
+
+      <label for="cod_ti" class="col-sm-2 control-label">Conta</label>
+      <div class="col-sm-4">
+        <input type="number" class="form-control" name="Conta" maxlength="10"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          placeholder="Informe a Conta">
+      </div>
+
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10" align="right">
+        <button type="submit" name="btnSalvar" class="btn btn-success">
+          <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+          Cadastrar
+        </button>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
